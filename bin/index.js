@@ -4,6 +4,7 @@ import { generate } from "../src/commands/generate.js";
 import { readFileSync } from "fs";
 import { join } from "path";
 import chalk from "chalk";
+import { showInfo } from "../src/commands/info.js";
 
 const program = new Command();
 
@@ -34,7 +35,7 @@ program
     .command("info")
     .alias("i")
     .description("Display information about the CLI tool")
-    .action(() => {});
+    .action(() => showInfo());
 
 program.on("command:*", ([cmd]) => {
     console.error(
