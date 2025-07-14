@@ -1,10 +1,10 @@
 import os from "os";
-import { execSync } from "child_process";
 import chalk from "chalk";
 import figlet from "figlet";
-import gradient from "gradient-string";
-import { existsSync, readFileSync } from "fs";
 import { join } from "path";
+import gradient from "gradient-string";
+import { execSync } from "child_process";
+import { existsSync, readFileSync } from "fs";
 
 export function showInfo() {
     const pkgPath = join(process.cwd(), "package.json");
@@ -22,7 +22,8 @@ export function showInfo() {
         npmVersion = execSync("npm -v").toString().trim();
     } catch {}
     const banner = figlet.textSync("express-cli", { font: "Slant" });
-    console.log(gradient.vice("\n" + banner));
+    console.log(gradient.vice(banner));
+    console.log("");
     console.log(chalk.bold("[System Information]"));
     console.log(chalk.cyan("OS Version     : ") + osVersion);
     console.log(chalk.cyan("NodeJS Version : ") + nodeVersion);

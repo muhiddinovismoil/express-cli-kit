@@ -1,0 +1,8 @@
+export const <%= capitalizedName %>Middleware = () => (req, res, next) => {
+    try {
+        // Middleware logic for <%= name %>
+        next()
+    } catch (error) {
+        next(error)
+    }
+}

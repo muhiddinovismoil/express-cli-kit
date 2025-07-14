@@ -1,7 +1,7 @@
 import fs from "fs";
-import path from "path";
 import ejs from "ejs";
 import ora from "ora";
+import path from "path";
 import chalk from "chalk";
 import { fileURLToPath } from "url";
 

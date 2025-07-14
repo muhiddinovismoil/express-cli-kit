@@ -1,11 +1,9 @@
 #!/usr/bin/env node
-import { Command } from "commander";
-import { generate } from "../src/commands/generate.js";
-import { readFileSync } from "fs";
-import { join } from "path";
 import chalk from "chalk";
-import { showInfo } from "../src/commands/info.js";
-import { showSchematicListsTable } from "../src/utils/table.js";
+import { join } from "path";
+import { readFileSync } from "fs";
+import { Command } from "commander";
+import { showSchematicListsTable, generate, showInfo } from "../src/index.js";
 
 const program = new Command();
 
@@ -37,6 +35,11 @@ program
     .alias("i")
     .description("Display information about the CLI tool")
     .action(() => showInfo());
+
+program
+    .command("new")
+    .alias("n")
+    .description("Create a new Express.js project");
 
 program.on("command:*", ([cmd]) => {
     console.error(
