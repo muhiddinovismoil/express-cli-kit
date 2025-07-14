@@ -30,7 +30,11 @@ program
         generate(type, name);
     });
 
-program.command("info").alias("i").description();
+program
+    .command("info")
+    .alias("i")
+    .description("Display information about the CLI tool")
+    .action(() => {});
 
 program.on("command:*", ([cmd]) => {
     console.error(
