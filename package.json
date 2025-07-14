@@ -1,6 +1,6 @@
 {
     "name": "express-cli",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "description": "A powerful CLI tool for generating Express.js applications and components.",
     "main": "index.js",
     "bin": {
