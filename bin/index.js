@@ -5,6 +5,7 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import chalk from "chalk";
 import { showInfo } from "../src/commands/info.js";
+import { showSchematicListsTable } from "../src/utils/table.js";
 
 const program = new Command();
 
@@ -43,6 +44,10 @@ program.on("command:*", ([cmd]) => {
     );
     console.log(`See --help for a list of available commands.\n`);
     process.exit(1);
+});
+
+program.addHelpText("afterAll", () => {
+    return `\n${chalk.bold("Schematics available on express-cli:")}\n${showSchematicListsTable()}`;
 });
 
 program.parse();

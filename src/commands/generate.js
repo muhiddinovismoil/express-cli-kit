@@ -10,7 +10,6 @@ const __dirname = path.dirname(__filename);
 
 export async function generate(type, name) {
     const spinner = ora(`Generating ${type} "${name}"...`).start();
-
     try {
         const templatePath = path.join(__dirname, `../templates/${type}.ejs`);
         const outputFileName = `${name}.${type}.js`;

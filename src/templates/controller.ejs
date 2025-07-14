@@ -1,9 +1,19 @@
-// <%= name %>.controller.js
-
 export function getAll<%= capitalizedName %>(req, res) {
   res.send('GET all <%= name %>s');
 }
 
 export function get<%= capitalizedName %>ById(req, res) {
   res.send('GET <%= name %> by id');
+}
+
+export function create<%= capitalizedName %>(req, res) {
+  res.send('POST create <%= name %>');
+}
+
+export function update<%= capitalizedName %>(req, res) {
+  res.send('PUT update <%= name %>');
+}
+
+export function delete<%= capitalizedName %>(req, res) {
+  res.send('DELETE <%= name %>');
 }
