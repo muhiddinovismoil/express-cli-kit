@@ -3,7 +3,12 @@ import chalk from "chalk";
 import { join } from "path";
 import { readFileSync } from "fs";
 import { Command } from "commander";
-import { showSchematicListsTable, generate, showInfo } from "../src/index.js";
+import {
+    showSchematicListsTable,
+    generate,
+    showInfo,
+    createNewApp,
+} from "../src/index.js";
 
 const program = new Command();
 
@@ -39,7 +44,11 @@ program
 program
     .command("new")
     .alias("n")
-    .description("Create a new Express.js project");
+    .argument("[name]", "Name of the new application")
+    .description("Generate a new Express application")
+    .action((name) => {
+        createNewApp(name);
+    });
 
 program.on("command:*", ([cmd]) => {
     console.error(
