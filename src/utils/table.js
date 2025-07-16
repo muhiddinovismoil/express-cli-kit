@@ -29,11 +29,6 @@ export function showSchematicListsTable() {
             description: "Generate a model declaration",
         },
         {
-            name: "config",
-            alias: "c",
-            description: "Generate a new config file declaration",
-        },
-        {
             name: "resourse",
             alias: "res",
             description: "Generate a new CRUD resource",
