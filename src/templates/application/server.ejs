@@ -1,0 +1,14 @@
+import app from './src/app.js'
+import config from './src/config/config.js';
+
+
+const bootstrap = () => {
+    try {
+        app.listen(config.port, async () => {
+            console.log(`SERVER IS RUNNING ON PORT: ${config.port}`)
+        })
+    } catch (error) {
+        console.error('Error starting the server:',error.message)
+    }
+}
+bootstrap()

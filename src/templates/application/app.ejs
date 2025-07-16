@@ -1,0 +1,19 @@
+import express from 'express';
+import allRoutes from './routes/main-routes.js'
+
+const app = express();
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('upload'))
+
+app.use('/api/v1',allRoutes)
+
+app.use((err, req, res, next) => {
+    if (err) {
+        return res.send(err.message)
+    }
+    return res.send('Not found')
+})
+
+export default app;

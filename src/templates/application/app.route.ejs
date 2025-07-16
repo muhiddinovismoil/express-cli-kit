@@ -1,0 +1,6 @@
+import { Router } from 'express'
+import { getHello } from '../controllers/app.controller.js'
+
+export const appRouter = Router()
+
+appRouter.get('/', getHello)

@@ -1,0 +1,8 @@
+import { Router } from 'express';
+import { appRouter } from './index.js'
+
+const allRoutes = Router()
+
+allRoutes.use('/app',approuter)
+
+export default allRoutes

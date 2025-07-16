@@ -1,0 +1,6 @@
+import { getHelloService } from '../service/app.service.js';
+
+export function getHello(req, res) {
+    const response = getHelloService();
+    return res.status(200).send(response)
+}
