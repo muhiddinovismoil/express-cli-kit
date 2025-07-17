@@ -30,32 +30,41 @@ export async function generate(type, name) {
                 case "middleware" || "m":
                     type = "middleware";
                     break;
+                default:
+                    spinner.fail(
+                        chalk.red(
+                            'Invalid schematic type. Follow to schematic types and aliases".'
+                        )
+                    );
             }
+            const templatePath = path.join(
+                __dirname,
+                `../templates/${type}.ejs`
+            );
+            const outputFileName = `${name}.${type}.js`;
+            const outputPath = path.join(process.cwd(), outputFileName);
+            if (fs.existsSync(outputPath)) {
+                spinner.fail(
+                    chalk.red(`File ${outputFileName} already exists.`)
+                );
+                return;
+            }
+            const capitalizedName =
+                name.charAt(0).toUpperCase() + name.slice(1);
+            const content = await ejs.renderFile(templatePath, {
+                name,
+                capitalizedName,
+            });
+            fs.writeFileSync(outputPath, content);
+            spinner.succeed(
+                chalk.green(`${type} "${name}" created successfully.`)
+            );
         }
-        const templatePath = path.join(__dirname, `../templates/${type}.ejs`);
-        const outputFileName = `${name}.${type}.js`;
-        const outputPath = path.join(process.cwd(), outputFileName);
-
-        if (!fs.existsSync(templatePath)) {
-            spinner.fail(chalk.red(`Template for '${type}' not found.`));
-            return;
-        }
-
-        if (fs.existsSync(outputPath)) {
-            spinner.fail(chalk.red(`File ${outputFileName} already exists.`));
-            return;
-        }
-
-        const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
-
-        const content = await ejs.renderFile(templatePath, {
-            name,
-            capitalizedName,
-        });
-        fs.writeFileSync(outputPath, content);
-
-        spinner.succeed(chalk.green(`${type} "${name}" created successfully.`));
     } catch (err) {
-        spinner.fail(chalk.red(`Error: ${err.message}`));
+        spinner.fail(
+            chalk.red(
+                `Use "controller (co)", "service (s)", "model (mo)", "route (r)", or "middleware (m)`
+            )
+        );
     }
 }
