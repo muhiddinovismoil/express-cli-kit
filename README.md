@@ -48,12 +48,13 @@ npm install -g express-cli
 
 ## 📝 Commands
 
-| Command                 | Description              |
-| ----------------------- | ------------------------ |
-| `express-cli new <app>` | Create a new Express app |
-| `express-cli --help`    | Show help menu           |
-| `express-cli version`   | Show CLI version         |
-| `express-cli info`      | Info available about CLI |
+| Command                 | Description               |
+| ----------------------- | ------------------------- |
+| `express-cli new <app>` | Create a new Express app  |
+| `express-cli --help`    | Show help menu            |
+| `express-cli version`   | Show CLI version          |
+| `express-cli info`      | Info available about CLI  |
+| `express-cli generate`  | Generate new declarations |
 
 ---
 
