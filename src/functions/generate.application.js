@@ -120,7 +120,7 @@ async function generateProject(projectName, manager) {
 
         const installSpinner = ora({
             text: chalk.cyan(`Installing dependencies with ${manager}...`),
-            spinner: "arc",
+            spinner: "dots",
         }).start();
         console.log();
 
@@ -134,7 +134,10 @@ async function generateProject(projectName, manager) {
             cwd: projectPath,
             stdio: "inherit",
         });
-
+        execSync("git init", {
+            cwd: projectPath,
+            stdio: "inherit",
+        });
         installSpinner.succeed(
             chalk.green(
                 `Project ${projectName} created successfully with ${manager}! 🚀`
