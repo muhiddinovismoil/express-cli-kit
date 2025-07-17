@@ -1,0 +1,19 @@
+export const <%= schemaName %>  = {
+  rules: {
+    id: {
+      type: 'string',
+      required: true,
+      generated: true,
+    },
+    createdAt: {
+      type: 'date',
+      default: "Date.now",
+      readonly: true,
+    },
+    updatedAt: {
+      type: 'date',
+      default: "Date.now",
+      readonly: true,
+    }
+  }
+};

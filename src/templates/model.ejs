@@ -1,0 +1,25 @@
+export  const <%= modelName %> = {
+  name: '',
+  collection: '',
+  timestamps: true,
+  fields: [
+    {
+      name: 'id',
+      type: 'string',
+      primary: true,
+      generated: true,
+    },
+    {
+      name: 'createdAt',
+      type: 'date',
+      default: "Date.now",
+      readonly: true,
+    },
+    {
+      name: 'updatedAt',
+      type: 'date',
+      default: "Date.now",
+      readonly: true,
+    }
+  ]
+};
