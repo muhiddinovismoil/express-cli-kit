@@ -4,6 +4,7 @@ import ora from "ora";
 import path from "path";
 import chalk from "chalk";
 import { fileURLToPath } from "url";
+import { logCreate } from "../functions/index.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,6 +12,26 @@ const __dirname = path.dirname(__filename);
 export async function generate(type, name) {
     const spinner = ora(`Generating ${type} "${name}"...`).start();
     try {
+        if (type == "resource" || type == "res") {
+        } else {
+            switch (type) {
+                case "controller" || "co":
+                    type = "controller";
+                    break;
+                case "service" || "s":
+                    type = "service";
+                    break;
+                case "model" || "mo":
+                    type = "model";
+                    break;
+                case "route" || "r":
+                    type = "route";
+                    break;
+                case "middleware" || "m":
+                    type = "middleware";
+                    break;
+            }
+        }
         const templatePath = path.join(__dirname, `../templates/${type}.ejs`);
         const outputFileName = `${name}.${type}.js`;
         const outputPath = path.join(process.cwd(), outputFileName);

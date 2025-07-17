@@ -46,7 +46,7 @@ async function renderTemplates(projectName) {
     );
     await renderTemplateFile(
         "app.route",
-        path.join(projectPath, "src/routes/app.routes.js")
+        path.join(projectPath, "src/routes/app.route.js")
     );
     await renderTemplateFile(
         "app.controller",
