@@ -1,5 +1,8 @@
-import dotenv from 'dotenv'
+import { config } from 'dotenv'
 
-export default config = {
+config()
+
+const appConfig = {
     port: process.env.PORT,
 }
+export default appConfig

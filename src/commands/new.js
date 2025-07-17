@@ -35,10 +35,10 @@ export async function createNewApp(name) {
             case "npm":
                 await generateNewApplicationWithNpm(name);
                 break;
-            case "yarn":
+            case "pnpm":
                 await generateNewApplicationWithPnpm(name);
                 break;
-            case "pnpm":
+            case "yarn":
                 await generateNewApplicationWithYarn(name);
                 break;
         }
