@@ -87,9 +87,9 @@ Feel free to [open an issue](https://github.com/your-repo/issues) or submit a pu
 
 ## 📄 License
 
-MIT © 2024
+MIT © 2025
 
 ---
 
-Made with ❤️ by [Your Name]  
+Made with ❤️ by [Muhiddinov Ismoil]  
 Give a ⭐️ if you like this project!
