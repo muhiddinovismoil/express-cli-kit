@@ -57,15 +57,16 @@ npm install -g express-cli
 
 ---
 
-┌───────────────┬──────────┬──────────────────────────────────────────────────┐
-│ name          │ alias    │ description                                      │
-│ controller    │ co       │ Generate a controller declaration                │
-│ middleware    │ mi       │ Generate a middleware declaration                │
-│ route         │ r        │ Generate a new route declaration                 │
-│ service       │ s        │ Generate a service declaration                   │
-│ model         │ mo       │ Generate a model declaration                     │
-│ resourse      │ res      │ Generate a new CRUD resource                     │
-└───────────────┴──────────┴──────────────────────────────────────────────────┘
+## 🧩 Generators
+
+| Name       | Alias | Description                       |
+| ---------- | ----- | --------------------------------- |
+| controller | co    | Generate a controller declaration |
+| middleware | mi    | Generate a middleware declaration |
+| route      | r     | Generate a new route declaration  |
+| service    | s     | Generate a service declaration    |
+| model      | mo    | Generate a model declaration      |
+| resource   | res   | Generate a new CRUD resource      |
 
 ## 💡 Example
 
