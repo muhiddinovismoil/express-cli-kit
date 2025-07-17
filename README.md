@@ -81,7 +81,7 @@ npm start
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!  
-Feel free to [open an issue](https://github.com/your-repo/issues) or submit a pull request.
+Feel free to [open an issue](https://github.com/muhiddinovismoil/express-cli/issues) or submit a pull request.
 
 ---
 
