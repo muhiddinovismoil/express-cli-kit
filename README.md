@@ -91,5 +91,5 @@ MIT © 2025
 
 ---
 
-Made with ❤️ by [Muhiddinov Ismoil]  
+Made with ❤️ by Muhiddinov Ismoil
 Give a ⭐️ if you like this project!
