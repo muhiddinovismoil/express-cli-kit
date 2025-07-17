@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 import chalk from "chalk";
-import { join } from "path";
-import { readFileSync } from "fs";
+import path, { dirname } from "path";
+import { existsSync, readFileSync } from "fs";
 import { Command } from "commander";
+import { fileURLToPath } from "url";
 import {
     showSchematicListsTable,
     generate,
@@ -10,17 +11,30 @@ import {
     createNewApp,
 } from "../src/index.js";
 
-const program = new Command();
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const pkg = JSON.parse(
-    readFileSync(join(process.cwd(), "package.json"), "utf8")
-);
+const pkgPath = path.resolve(__dirname, "../package.json");
+
+let pkg = {};
+if (existsSync(pkgPath)) {
+    pkg = JSON.parse(readFileSync(pkgPath, "utf8"));
+} else {
+    console.log("⚠️  CLI package.json not found.");
+    pkg.version = "0.0.0";
+}
+
+const program = new Command();
 
 program
     .name("express-cli")
     .description("Express CLI tool to generate project components")
     .helpOption("-h, --help", "Display help for command")
-    .version(pkg.version, "-v, --version", "Display version information")
+    .version(
+        pkg.version || "1.0.0",
+        "-v, --version",
+        "Display version information"
+    )
     .helpCommand(false);
 
 program
@@ -28,9 +42,7 @@ program
     .alias("g")
     .argument("<type>", "Type of component (controller, route, service, etc.)")
     .argument("<name>", "Name of the component")
-    .description(
-        "Generate a new component for the Express application (controller, route, service, etc.)"
-    )
+    .description("Generate a new component for the Express application")
     .action((type, name) => {
         generate(type, name);
     });
