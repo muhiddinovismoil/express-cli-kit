@@ -136,7 +136,6 @@ async function generateProject(projectName, manager) {
         });
         execSync("git init", {
             cwd: projectPath,
-            stdio: "inherit",
         });
         installSpinner.succeed(
             chalk.green(
