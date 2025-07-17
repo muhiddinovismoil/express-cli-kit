@@ -135,7 +135,6 @@ async function generateProject(projectName, manager) {
 
         execSync(commandMap[manager], {
             cwd: projectPath,
-            stdio: "inherit",
         });
         execSync("git init", {
             cwd: projectPath,
