@@ -53,9 +53,19 @@ npm install -g express-cli
 | `express-cli new <app>` | Create a new Express app |
 | `express-cli --help`    | Show help menu           |
 | `express-cli version`   | Show CLI version         |
-| `express-cli list`      | List available templates |
+| `express-cli info`      | Info available about CLI |
 
 ---
+
+┌───────────────┬──────────┬──────────────────────────────────────────────────┐
+│ name          │ alias    │ description                                      │
+│ controller    │ co       │ Generate a controller declaration                │
+│ middleware    │ mi       │ Generate a middleware declaration                │
+│ route         │ r        │ Generate a new route declaration                 │
+│ service       │ s        │ Generate a service declaration                   │
+│ model         │ mo       │ Generate a model declaration                     │
+│ resourse      │ res      │ Generate a new CRUD resource                     │
+└───────────────┴──────────┴──────────────────────────────────────────────────┘
 
 ## 💡 Example
 
