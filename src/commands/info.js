@@ -5,7 +5,7 @@ import gradient from "gradient-string";
 import { execSync } from "child_process";
 import { existsSync, readFileSync } from "fs";
 import { fileURLToPath } from "url";
-import path, { dirname, resolve, join } from "path";
+import { dirname, resolve, join } from "path";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
