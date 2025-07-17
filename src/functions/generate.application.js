@@ -98,6 +98,9 @@ async function renderTemplates(projectName) {
         path.join(projectPath, ".gitignore"),
         "node_modules\n.env\n"
     );
+    execSync("npx gitignore node", {
+        cwd: projectPath,
+    });
     await renderTemplateFile(".env", path.join(projectPath, ".env"));
     await renderTemplateFile(
         ".env.example",
@@ -113,10 +116,10 @@ async function generateProject(projectName, manager) {
     ).start();
 
     try {
-        await renderTemplates(projectName);
         scaffoldSpinner.succeed(
             chalk.green(`Scaffolded ${projectName} files.`)
         );
+        await renderTemplates(projectName);
 
         const installSpinner = ora({
             text: chalk.cyan(`Installing dependencies with ${manager}...`),
