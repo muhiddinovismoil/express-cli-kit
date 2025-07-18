@@ -5,29 +5,35 @@ import path from "path";
 import chalk from "chalk";
 import { fileURLToPath } from "url";
 import { logCreate } from "../functions/index.js";
+import inquirer from "inquirer";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export async function generate(type, name) {
-    const spinner = ora(`Generating ${type} "${name}"...`).start();
+    const spinner = ora(`Generating ...`).start();
     try {
         if (type == "resource" || type == "res") {
         } else {
             switch (type) {
-                case "controller" || "co":
+                case "controller":
+                case "co":
                     type = "controller";
                     break;
-                case "service" || "s":
+                case "service":
+                case "s":
                     type = "service";
                     break;
-                case "model" || "mo":
+                case "model":
+                case "mo":
                     type = "model";
                     break;
-                case "route" || "r":
+                case "route":
+                case "r":
                     type = "route";
                     break;
-                case "middleware" || "m":
+                case "middleware":
+                case "mi":
                     type = "middleware";
                     break;
                 default:
@@ -36,13 +42,33 @@ export async function generate(type, name) {
                             'Invalid schematic type. Follow to schematic types and aliases".'
                         )
                     );
+                    return;
             }
             const templatePath = path.join(
                 __dirname,
                 `../templates/${type}.ejs`
             );
             const outputFileName = `${name}.${type}.js`;
-            const outputPath = path.join(process.cwd(), outputFileName);
+            const projectDir = process.cwd();
+            const srcDir = path.join(projectDir, "src");
+            const controllerDirInSrc = path.join(srcDir, type);
+            const controllerDir = path.join(projectDir, type);
+            let outputPath;
+            if (fs.existsSync(srcDir)) {
+                if (fs.existsSync(controllerDirInSrc)) {
+                    outputPath = path.join(controllerDirInSrc, outputFileName);
+                } else {
+                    fs.mkdirSync(controllerDirInSrc, { recursive: true });
+                    outputPath = path.join(controllerDirInSrc, outputFileName);
+                }
+            } else {
+                if (fs.existsSync(controllerDir)) {
+                    outputPath = path.join(controllerDir, outputFileName);
+                } else {
+                    fs.mkdirSync(controllerDir, { recursive: true });
+                    outputPath = path.join(controllerDir, outputFileName);
+                }
+            }
             if (fs.existsSync(outputPath)) {
                 spinner.fail(
                     chalk.red(`File ${outputFileName} already exists.`)
@@ -55,6 +81,9 @@ export async function generate(type, name) {
                 name,
                 capitalizedName,
             });
+            const size = Buffer.byteLength(content, "utf8");
+            console.log();
+            logCreate(path.relative(process.cwd(), outputPath), size);
             fs.writeFileSync(outputPath, content);
             spinner.succeed(
                 chalk.green(`${type} "${name}" created successfully.`)
@@ -63,7 +92,7 @@ export async function generate(type, name) {
     } catch (err) {
         spinner.fail(
             chalk.red(
-                `Use "controller (co)", "service (s)", "model (mo)", "route (r)", or "middleware (m)`
+                `Use "controller (co)", "service (s)", "model (mo)", "route (r)", or "middleware (mi)`
             )
         );
     }
