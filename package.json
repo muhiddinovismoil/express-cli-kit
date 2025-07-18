@@ -1,11 +1,19 @@
 {
-    "name": "express-cli",
+    "name": "express-gen",
     "version": "0.1.0",
     "description": "A powerful CLI tool for generating Express.js applications and components.",
     "main": "index.js",
     "bin": {
         "express-cli": "./bin/index.js"
     },
+    "files": [
+        "bin/",
+        "src/",
+        "templates/",
+        "functions/",
+        "utils/",
+        "index.js"
+    ],
     "scripts": {
         "dev": "node ./bin/index.js",
         "test": "echo \"No test specified\" && exit 0"
