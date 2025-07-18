@@ -1,5 +1,5 @@
 {
-    "name": "express-gen",
+    "name": "express-cli-kit",
     "version": "1.0.9",
     "description": "A powerful CLI tool for generating Express.js applications and components.",
     "main": "index.js",
