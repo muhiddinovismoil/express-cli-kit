@@ -41,7 +41,7 @@ program
     .command("generate")
     .alias("g")
     .argument("<type>", "Type of component (controller, route, service, etc.)")
-    .argument("<name>", "Name of the component")
+    .argument("[name]", "Name of the component")
     .description("Generate a new component for the Express application")
     .action((type, name) => {
         generate(type, name);
