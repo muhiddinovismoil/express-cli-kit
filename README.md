@@ -1,4 +1,4 @@
-# 🚀 express-cli
+# 🚀 express-cli-kit
 
 A simple and powerful CLI tool to scaffold Express.js applications with ease! ✨
 
