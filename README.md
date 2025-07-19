@@ -1,4 +1,4 @@
-# 🚀 express-cli-kit
+# 🚀 express-cli-kit  [NPM package link](https://www.npmjs.com/package/express-cli-kit)
 
 A simple and powerful CLI tool to scaffold Express.js applications with ease! ✨
 
