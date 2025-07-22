@@ -2,7 +2,7 @@ import ora from "ora";
 import path, { resolve, dirname } from "path";
 import chalk from "chalk";
 import fs from "fs/promises";
-import { execSync } from "child_process";
+import { execSync, exec } from "child_process";
 import ejs from "ejs";
 import { fileURLToPath } from "url";
 import { logCreate } from "./index.js";
@@ -133,10 +133,10 @@ async function generateProject(projectName, manager) {
             yarn: "npx yarn add express dotenv prettier",
         };
 
-        execSync(commandMap[manager], {
+        exec(commandMap[manager], {
             cwd: projectPath,
         });
-        execSync("git init", {
+        exec("git init .", {
             cwd: projectPath,
         });
         installSpinner.succeed(
