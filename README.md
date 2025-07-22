@@ -9,7 +9,7 @@ A simple and powerful CLI tool to scaffold Express.js applications with ease! �
 Get started in seconds:
 
 ```bash
-npm install -g express-cli
+npm install -g express-cli-kit
 ```
 
 ---
@@ -37,12 +37,12 @@ npm install -g express-cli
 
 ## 🛠️ Features
 
-- 🏗️ **Instant Express.js scaffolding**
-- 📁 **Clean project structure**
-- 🧩 **Custom templates support**
-- 🚦 **Zero config, ready to code**
-- 📝 **Helpful CLI commands**
-- 🌈 **Fun and easy to use!**
+-   🏗️ **Instant Express.js scaffolding**
+-   📁 **Clean project structure**
+-   🧩 **Custom templates support**
+-   🚦 **Zero config, ready to code**
+-   📝 **Helpful CLI commands**
+-   🌈 **Fun and easy to use!**
 
 ---
 
@@ -82,11 +82,11 @@ npm start
 
 ## ❓ FAQ
 
-- **Q:** _Can I use my own templates?_  
-  **A:** Yes! Place your templates in the `.express-cli/templates` folder.
+-   **Q:** _Can I use my own templates?_  
+    **A:** Yes! Place your templates in the `.express-cli/templates` folder.
 
-- **Q:** _Does it support TypeScript?_  
-  **A:** TypeScript templates are coming soon! Stay tuned.
+-   **Q:** _Does it support TypeScript?_  
+    **A:** TypeScript templates are coming soon! Stay tuned.
 
 ---
 
