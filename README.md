@@ -1,4 +1,4 @@
-# 🚀 express-cli-kit  [NPM package link](https://www.npmjs.com/package/express-cli-kit)
+# 🚀 express-cli-kit [NPM package link](https://www.npmjs.com/package/express-cli-kit)
 
 A simple and powerful CLI tool to scaffold Express.js applications with ease! ✨
 
@@ -11,6 +11,14 @@ Get started in seconds:
 ```bash
 npm install -g express-cli-kit
 ```
+
+If you want use it using with npx you should do it like this:
+
+```
+npx express-cli-kit new
+```
+
+> **Note:** The package is called **express-cli-kit** (install with `npm install -g express-cli-kit`), but the global command you use in your terminal is **express-cli**.<br> > <u>Use the <strong>express-cli</strong> command after installing <strong>express-cli-kit</strong> globally.</u>
 
 ---
 
