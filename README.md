@@ -15,7 +15,7 @@ npm install -g express-cli-kit
 If you want use it using with npx you should do it like this:
 
 ```
-npx express-cli-kit new
+npx express-cli-kit <commands>
 ```
 
 > **Note:** The package is called **express-cli-kit** (install with `npm install -g express-cli-kit`), but the global command you use in your terminal is **express-cli**.<br> > <u>Use the <strong>express-cli</strong> command after installing <strong>express-cli-kit</strong> globally.</u>
